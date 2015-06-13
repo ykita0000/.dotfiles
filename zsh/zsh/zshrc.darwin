@@ -1,0 +1,90 @@
+###############
+# zshrc.local #
+###############
+
+echo "darwin"
+echo -n "\e]2;$HOST\a"
+PS1='%1~ >> '
+
+### alias ###
+alias root='root -l'
+alias r++='g++ `root-config --cflags --libs` -lMinuit'
+alias vi='vim'
+alias py='python'
+alias c='cd'
+alias ls='ls -FG'
+alias l='ls -FG'
+alias ll='ls -FG -la'
+alias la='ls -FG -a'
+alias eng='LANG=C LANGUAGE=C LC_ALL=C'
+alias grep='grep --color'
+
+#######################################################################
+### PATH                                                            ###
+#######################################################################
+### my commands ###
+export PATH=$HOME/works/codes/sh:$PATH
+export PATH=$HOME/works/codes/py:$PATH
+export PATH=$HOME/works/codes/c++:$PATH
+
+### root ###
+export ROOTSYS=/usr/local
+export PATH=$ROOTSYS/bin:$PATH
+export LD_LIBRARY_PATH=$ROOTSYS/lib/root:$LD_LIBRARY_PATH
+#pushd $(brew --prefix root) >/dev/null; . libexec/thisroot.sh; popd >/dev/null
+
+### ruby ###
+#eval $(rbenv init -)
+export PATH=$HOME/.rbenv/bin:$PATH
+
+
+### python ###
+export PYTHONPATH=$ROOTSYS/lib/root:$PYTHONPATH
+### pyqt ###
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+export PYTHONPATH=/Library/Python/2.7/site-packages:$PYTHONPATH
+### pyqtgraph ###
+export MYPYTHONLIB=$HOME/works/lib/pylib
+export PYTHONPATH=$MYPYTHONLIB/xorshift:$PYTHONPATH
+
+
+### taSoft ###
+export TADIR=$HOME/works/app/taSoft/development
+### crsikalib ###
+export LD_LIBRARY_PATH=$HOME/works/crsklib/lib:$LD_LIBRARY_PATH
+
+
+#######################################################################
+### zsh                                                             ###
+#######################################################################
+### cvs ###
+export CVS_RSH=ssh
+# compinitの初期化
+autoload -U compinit
+compinit
+# 色つきの補完
+#zstyle ':completion:*' list-colors di=34 fi=0
+# 補完候補をカーソルで選択できる 
+zstyle ':completion:*:default' menu select=1
+#補完リストに8ビットコードを使う
+setopt PRINT_EIGHT_BIT
+## svn editor
+export SVN_EDITOR="vim"
+### colors under setting
+export LSCOLORS=GxhxxxdxBxegedabagacad
+#export LSCOLORS=exfxcxdxbxegedabagacad
+export LS_COLORS='di=01;36:ln=37:so=32:pi=33:ex=01:31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+. ~/.zsh/alias_s
+
+# ====================
+# source auto-fu.zsh
+# ====================
+#if [ -f ~/.zsh/auto-fu.zsh ]; then
+#    source ~/.zsh/auto-fu.zsh
+#    function zle-line-init () {
+#        auto-fu-init
+#    }
+#    zle -N zle-line-init
+#    zstyle ':completion:*' completer _oldlist _complete
+#fi

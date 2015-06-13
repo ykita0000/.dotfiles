@@ -1,0 +1,93 @@
+# user file-creation mask
+umask 022
+
+## キーバインド
+# Emacs風キーバインド
+bindkey -e
+# Vi風キーバインド
+#bindkey -v
+
+## プロンプト
+local C_ROOT="%{[31m%}"    # 31: red
+local C_LOCAL="%{[36m%}"   # 36: cyan
+local C_REMOTE="%{[35m%}"  # 35: magenta
+local C_RESET="%{[m%}"
+case ${UID} in
+0)
+	PROMPT="${C_ROOT}%n@%m(%h%)${C_RESET}# "
+	PROMPT2="%_> "
+	RPROMPT="[%~]"
+	SPROMPT="%r is correct? [n,y,a,e]: "
+	[ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
+	PROMPT="${C_ROOT}%n@%B%m%b(%h%)${C_RESET}# "
+	;;
+*)
+	PROMPT="${C_LOCAL}%n(%h%)${C_RESET}%% " 
+	PROMPT2="%_> "
+	RPROMPT="%~ %T %W"
+	SPROMPT="%r is correct? [n,y,a,e]: "
+	[ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
+	PROMPT="${C_REMOTE}%n@%B%m%b(%h%)${C_RESET}%% "
+	;;
+esac
+# コマンド実行後は右プロンプトを消す
+#setopt transient_rprompt
+
+## タイトルバーに各種情報を表示
+case "${TERM}" in
+kterm*|xterm)
+	precmd() {
+	    echo -ne "\033]0;${LOGNAME}@${HOST%%.*}:${PWD}\007"
+	}
+	;;
+esac 
+
+## 補完
+autoload -U compinit
+compinit
+# ディレクトリ名を入力するだけで移動
+setopt auto_cd 
+# 自動でpushd
+setopt auto_pushd
+# 重複するディレクトリはpushdしない
+setopt pushd_ignore_dups
+# 存在しないコマンド入力時に修正を提案
+#setopt correct
+# 補完候補リストを詰めて表示
+setopt list_packed 
+# 補完候補リスト表示時にビープ音を鳴らさない
+setopt nolistbeep 
+
+## 履歴
+# 履歴ファイル
+HISTFILE=~/.zsh_history
+# メモリに保存する履歴の数
+HISTSIZE=10000
+# ファイルに保存する履歴の数
+SAVEHIST=10000
+# 同じコマンドを保存対象外とする
+setopt hist_ignore_dups
+# 複数のシェル間で履歴を共有する
+setopt share_history
+# historyコマンド自体は履歴に追加しない
+setopt hist_no_store
+# 余分な空白を除去して履歴に追加する
+setopt hist_reduce_blanks
+# スペースではじめたコマンドは履歴に追加しない
+#setopt hist_ignore_space
+
+# 履歴検索機能
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^P" history-beginning-search-backward-end
+bindkey "^N" history-beginning-search-forward-end 
+
+## Zshの挙動
+# パスの最後に付けたスラッシュを勝手に除去させない
+#setopt noautoremoveslash
+# aliasの場合もaliasを展開して補完対象を探したりする
+setopt complete_aliases
+
+WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+

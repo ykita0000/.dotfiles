@@ -1,0 +1,13 @@
+. ~/.zsh/zshrc
+. ~/.zsh/zshrc.local
+
+case $OSTYPE in
+    darwin*)
+	    . ~/.zsh/zshrc.darwin
+        ;;
+    linux*)
+	    . ~/.zsh/zshrc.linux
+        ;;
+esac
+
+

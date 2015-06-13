@@ -1,0 +1,4 @@
+if filereadable(expand('$HOME/.vim/vimrc.holdings'))
+	source $HOME/.vim/vimrc.holdings
+endif
+

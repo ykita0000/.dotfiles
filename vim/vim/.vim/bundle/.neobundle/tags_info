@@ -1,0 +1,8 @@
+grep.vim
+neobundle.vim
+nerdtree
+unite.vim
+vim-autoclose
+vim-fugitive
+vim-indent-guides
+vim-quickrun

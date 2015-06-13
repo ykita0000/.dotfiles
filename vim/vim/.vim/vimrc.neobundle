@@ -1,0 +1,62 @@
+"" neobandle
+""---------------------------
+"" Start Neobundle Settings.
+""---------------------------
+"" bundleで管理するディレクトリを指定
+set nocompatible
+filetype off
+
+if has('vim_starting')
+	set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+ 
+" neobundle自体をneobundleで管理
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+"GitHubリポジトリにあるプラグインを利用場合
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'scrooloose/nerdtree'
+
+NeoBundle 'Townk/vim-autoclose'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'grep.vim'
+"NeoBundle 'Shougo/neocomplete.vim'
+"NeoBundle 'Shougo/neocomplcache.vim'
+"NeoBundle 'Shougo/unite.vim'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+"
+"" for python 
+"NeoBundle 'davidhalter/jedi-vim'
+
+
+call neobundle#end()
+ 
+" Required:
+filetype plugin indent on
+
+" 未インストールのプラグインがある場合、インストールするかどうかを尋ねてくれるようにする設定
+" 毎回聞かれると邪魔な場合もあるので、この設定は任意です。
+"NeoBundleCheck
+ 
+""-------------------------
+"" End Neobundle Settings.
+""-------------------------
+
+
+" NERDTree
+let NERDTreeShowHidden = 1
+autocmd VimEnter * execute 'NERDTree'
+
+
+" vim-indentguide
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_guide_size = 1
+let g:indent_guides_start_levels = 0
+let g:indent_guides_auto_colors=0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=248
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=248
+

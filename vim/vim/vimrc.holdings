@@ -1,0 +1,16 @@
+set number
+filetype plugin on
+filetype indent on
+if filereadable(expand('$HOME/.vim/vimrc.neobundle'))
+	source $HOME/.vim/vimrc.neobundle
+endif
+
+if filereadable(expand('$HOME/.vim/vimrc.python'))
+	source $HOME/.vim/vimrc.python
+endif
+
+
+if filereadable(expand('$HOME/.vim/vimrc.general'))
+	source $HOME/.vim/vimrc.general
+endif
+

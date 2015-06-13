@@ -1,0 +1,111 @@
+#############
+# zshrc.local
+#
+#
+############
+
+echo "Linux"
+
+export GTK_IMMODULE=ibus
+export XMODIFIERS=ibus
+export QT_IM_MODULE=ibus
+echo -n "\e]2;$HOST\a"
+
+# linux で英語設定
+export LC_ALL="en_US.UTF-8"
+
+### alias ###
+alias r++='g++ `root-config --cflags --libs` -lMinuit'
+alias v='vim'
+alias vi='vim'
+alias c='cd'
+alias ls='ls -FG --color=auto'
+alias l='ls -FG --color=auto'
+alias ll='ls -la -FG --color=auto'
+alias la='ls -a -FG --color=auto'
+alias eng='LANG=C LANGUAGE=C LC_ALL=C'
+alias grep='grep --color'
+
+### my commands path
+export MYCODES=/home/ykita/works/codes
+export PATH=${MYCODES}/sh:$PATH
+export PATH=${MYCODES}/c++:$PATH
+export PATH=${MYCODES}/perl:$PATH
+export PATH=${MYCODES}/py:$PATH
+
+#### eclipse
+export PATH=/usr/local/eclipse/eclipse:$PATH
+
+### taSoft ###
+export TADIR=/home/ykita/works/app/taSoft/development
+
+### COAST ###
+export COAST_DIR=/home/ykita/app/coast_v4r5
+
+### root ###
+export ROOTSYS=/cern/pro/root
+export PATH=$ROOTSYS/bin:$PATH
+export LD_LIBRARY_PATH=$ROOTSYS/lib/root:$LD_LIBRARY_PATH
+#export LD_LIBRARY_PATH=$ROOTSYS/lib:$LD_LIBRARY_PATH
+alias root='root -l'
+
+### crsikalib ###
+export LD_LIBRARY_PATH=/home/ykita/works/app/crsklib/crsklib/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/home/ykita/works/app/SD/lib:$LD_LIBRARY_PATH
+
+### python ###
+#export PYTHONPATH=/usr/lib/python2.5/site-packages:$PYTHONPATH
+export PYTHONPATH=/usr/lib/python2.6/site-packages:$PYTHONPATH
+#export PYTHONPATH=/usr/lib/python2.7/site-packages:$PYTHONPATH
+#export PYTHONPATH=$ROOTSYS/lib:$PYTHONPATH
+export PYTHONPATH=$ROOTSYS/lib/root:$PYTHONPATH
+
+
+### TORQUE & MAUI ###
+export TRQSYS=/usr/local/torque
+export MAUISYS=/usr/local/maui
+export PATH=${PATH}:${TRQSYS}/bin:${TRQSYS}/sbin
+export PATH=${PATH}:${MAUISYS}/bin:${MAUISYS}/sbin
+
+
+### cvs ###
+export CVS_RSH=ssh
+
+# compinitの初期化
+autoload -U compinit
+compinit
+
+# # 補完候補をカーソルで選択できる 
+zstyle ':completion:*:default' menu select=1
+
+setopt complete_in_word
+setopt always_last_prompt
+
+#補完リストに8ビットコードを使う
+setopt PRINT_EIGHT_BIT
+
+#export PATH=$PYSIDESANDBOXPATH/bin:$PATH
+#export LD_LIBRARY_PATH=$PYSIDESANDBOXPATH/lib:$LD_LIBRARY_PATH
+#export PKG_CONFIG_PATH=$PYSIDESANDBOXPATH/lib/pkgconfig:$PKG_CONFIG_PATH
+#set -DENABLE_ICECC=1 if you're using the icecream distributed compiler
+alias runcmake='cmake .. -DCMAKE_INSTALL_PREFIX=$PYSIDESANDBOXPATH -DCMAKE_BUILD_TYPE=Debug -DENABLE_ICECC=0'
+
+
+### colors in completion
+export LSCOLORS='di=01;36:ln=37:so=32:pi=33:ex=01:31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+zstyle ':completion:*' list-colors ${(s.:.)LSCOLORS}
+
+
+
+# ====================
+# source auto-fu.zsh
+# ====================
+#if [ -f ~/.zsh/auto-fu.zsh ]; then
+#    source ~/.zsh/auto-fu.zsh
+#    function zle-line-init () {
+#        auto-fu-init
+#    }   
+#    zle -N zle-line-init
+#    zstyle ':completion:*' completer _oldlist _complete
+#fi
+

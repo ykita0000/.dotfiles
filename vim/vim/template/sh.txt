@@ -1,0 +1,6 @@
+#!/bin/bash
+# name   : .sh
+# author : ykita
+# date   : 
+# memo   : 
+set -e

@@ -1,0 +1,41 @@
+set ttyfast
+set autoread
+set nobackup
+set showmatch
+set ruler
+set encoding=utf-8
+set nu
+set expandtab tabstop=4 expandtab shiftwidth=4 softtabstop=4
+set paste
+set incsearch
+set hlsearch
+set noautoindent
+set foldmethod=indent
+
+set whichwrap=b,s,h,l,<,>,[,]
+set backspace=indent,eol,start
+
+
+" looks 
+syntax on
+colorscheme elflord
+set cursorline
+""___ status line ___
+set laststatus=2
+set statusline=%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}\ %<%F\ %m%r%=[%<%{fnamemodify(getcwd(),':~')}]\ %4l/\ %4L,\ %3c
+
+
+noremap <CR> o<ESC>
+
+" template
+autocmd BufNewFile *.c 0r $HOME/.vim/template/c.txt
+autocmd BufNewFile *.cc 0r $HOME/.vim/template/cc.txt
+autocmd BufNewFile *.sh 0r $HOME/.vim/template/sh.txt
+autocmd BufNewFile README 0r $HOME/.vim/template/README.txt
+
+" 挿入モードでのカーソル移動
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+
