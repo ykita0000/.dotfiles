@@ -30,8 +30,9 @@ NeoBundle 'grep.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 "
 "" for python 
-"NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'davidhalter/jedi-vim'
 
+NeoBundle 'thinca/vim-ref'
 
 call neobundle#end()
  
@@ -40,7 +41,7 @@ filetype plugin indent on
 
 " 未インストールのプラグインがある場合、インストールするかどうかを尋ねてくれるようにする設定
 " 毎回聞かれると邪魔な場合もあるので、この設定は任意です。
-"NeoBundleCheck
+NeoBundleCheck
  
 ""-------------------------
 "" End Neobundle Settings.
