@@ -5,7 +5,7 @@ set showmatch
 set ruler
 set encoding=utf-8
 set nu
-set expandtab tabstop=4 expandtab shiftwidth=4 softtabstop=4
+"set expandtab tabstop=4 expandtab shiftwidth=4 softtabstop=4
 set paste
 set incsearch
 set hlsearch
@@ -16,7 +16,7 @@ set whichwrap=b,s,h,l,<,>,[,]
 set backspace=indent,eol,start
 
 
-" looks 
+" apparence
 syntax on
 colorscheme elflord
 set cursorline
@@ -31,6 +31,8 @@ noremap <CR> o<ESC>
 autocmd BufNewFile *.c 0r $HOME/.vim/template/c.txt
 autocmd BufNewFile *.cc 0r $HOME/.vim/template/cc.txt
 autocmd BufNewFile *.sh 0r $HOME/.vim/template/sh.txt
+autocmd BufNewFile *.rb 0r $HOME/.vim/template/ruby.txt
+autocmd BufNewFile *.py 0r $HOME/.vim/template/py.txt
 autocmd BufNewFile README 0r $HOME/.vim/template/README.txt
 
 " 挿入モードでのカーソル移動

@@ -2,7 +2,6 @@
 # zshrc.local #
 ###############
 
-echo "darwin"
 echo -n "\e]2;$HOST\a"
 PS1='%1~ >> '
 
