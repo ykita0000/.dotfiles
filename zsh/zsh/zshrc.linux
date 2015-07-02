@@ -4,8 +4,6 @@
 #
 ############
 
-echo "Linux"
-
 export GTK_IMMODULE=ibus
 export XMODIFIERS=ibus
 export QT_IM_MODULE=ibus
