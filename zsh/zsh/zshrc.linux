@@ -7,23 +7,8 @@
 export GTK_IMMODULE=ibus
 export XMODIFIERS=ibus
 export QT_IM_MODULE=ibus
-echo -n "\e]2;$HOST\a"
-PS1='%1~ >> '
-
-
 # linux で英語設定
 export LC_ALL="en_US.UTF-8"
-
-### alias ###
-alias v='vim'
-alias vi='vim'
-alias c='cd'
-alias ls='ls -FG --color=auto'
-alias l='ls -FG --color=auto'
-alias ll='ls -la -FG --color=auto'
-alias la='ls -a -FG --color=auto'
-alias eng='LANG=C LANGUAGE=C LC_ALL=C'
-alias grep='grep --color'
 
 # compinitの初期化
 autoload -U compinit
