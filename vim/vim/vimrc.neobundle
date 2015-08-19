@@ -37,7 +37,7 @@ NeoBundle 'thinca/vim-ref'
 NeoBundle 'marcus/rsense'
 NeoBundle 'supermomonga/neocomplete-rsense.vim'
 
-NeoBundle 'scrooloose/syntastic'
+"NeoBundle 'scrooloose/syntastic'
 NeoBundle 'szw/vim-tags'
 NeoBundle 'tpope/vim-endwise'
 

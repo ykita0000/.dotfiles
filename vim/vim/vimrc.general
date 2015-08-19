@@ -18,7 +18,7 @@ set backspace=indent,eol,start
 
 " apparence
 syntax on
-colorscheme elflord
+ colorscheme elflord
 set cursorline
 ""___ status line ___
 set laststatus=2

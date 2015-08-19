@@ -1,5 +1,5 @@
 #############
-# zshrc.local
+# zshrc.linux
 #
 #
 ############
@@ -45,16 +45,4 @@ export LSCOLORS='di=01;36:ln=37:so=32:pi=33:ex=01:31:bd=46;34:cd=43;34:su=41;30:
 zstyle ':completion:*' list-colors ${(s.:.)LSCOLORS}
 
 
-
-# ====================
-# source auto-fu.zsh
-# ====================
-#if [ -f ~/.zsh/auto-fu.zsh ]; then
-#    source ~/.zsh/auto-fu.zsh
-#    function zle-line-init () {
-#        auto-fu-init
-#    }   
-#    zle -N zle-line-init
-#    zstyle ':completion:*' completer _oldlist _complete
-#fi
 
