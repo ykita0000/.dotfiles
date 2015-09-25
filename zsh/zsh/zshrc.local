@@ -18,8 +18,13 @@ echo -n "\e]2;$HOST\a"
 PS1='%1~ >> '
 
 
+export CUDASYS=/usr/local/cuda
+export PATH=$CUDASYS/bin:$PATH
+export PYTHONPATH=$CUDASYS/lib:$PYTHON_PATH
+export LD_LIBRARY_PATH=$CUDASYS/lib:$LD_LIBRARY_PATH
+export DYLD_LIBRARY_PATH=$CUDASYS/lib:$DYLD_LIBRARY_PATH
 
-export JAVA_HOME=/usr/java/default
-export PATH=$JAVA_HOME/bin:$PATH
+setopt combining_chars
+set combining_chars
 
-source /etc/profile.d/rvm.sh
+export HOMEBREW_GITHUB_API_TOKEN="549e9cd6c4c22915a979d41da1ebea3ee4d0170f"
