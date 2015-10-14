@@ -13,6 +13,7 @@ alias ll='ls -la -FG --color=auto'
 alias la='ls -a -FG --color=auto'
 alias eng='LANG=C LANGUAGE=C LC_ALL=C'
 alias grep='grep --color'
+alias t='tree'
 
 echo -n "\e]2;$HOST\a"
 PS1='%1~ >> '
@@ -27,4 +28,7 @@ export DYLD_LIBRARY_PATH=$CUDASYS/lib:$DYLD_LIBRARY_PATH
 setopt combining_chars
 set combining_chars
 
-export HOMEBREW_GITHUB_API_TOKEN="549e9cd6c4c22915a979d41da1ebea3ee4d0170f"
+# export HOMEBREW_GITHUB_API_TOKEN="549e9cd6c4c22915a979d41da1ebea3ee4d0170f"
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/ykita_work/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
