@@ -54,7 +54,6 @@ NeoBundleCheck
 "" End Neobundle Settings.
 ""-------------------------
 
-
 " NERDTree
 let NERDTreeShowHidden = 1
 autocmd VimEnter * execute 'NERDTree'
