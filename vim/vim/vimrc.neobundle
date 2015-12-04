@@ -41,6 +41,9 @@ NeoBundle 'supermomonga/neocomplete-rsense.vim'
 NeoBundle 'szw/vim-tags'
 NeoBundle 'tpope/vim-endwise'
 
+NeoBundle '5t111111/neat-json.vim'
+NeoBundle 'elzr/vim-json'
+
 call neobundle#end()
  
 " Required:

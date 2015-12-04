@@ -1,3 +1,4 @@
+. ~/.zsh/zshrc
 case $OSTYPE in
     darwin*)
 	    . ~/.zsh/zshrc.darwin
@@ -6,5 +7,4 @@ case $OSTYPE in
 	    . ~/.zsh/zshrc.linux
         ;;
 esac
-. ~/.zsh/zshrc
 . ~/.zsh/zshrc.local
