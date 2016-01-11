@@ -7,21 +7,26 @@
 alias v='vim'
 alias vi='vim'
 alias c='cd'
-alias ls='ls -FG --color=auto'
-alias l='ls -FG --color=auto'
-alias ll='ls -la -FG --color=auto'
-alias la='ls -a -FG --color=auto'
+alias l='ls -FG'
+alias la='ls -aFG'
+alias ll='ls -lFG'
+alias ls='ls -FG'
 alias eng='LANG=C LANGUAGE=C LC_ALL=C'
 alias grep='grep --color'
 alias t='tree'
+alias root='root -l'
 
 echo -n "\e]2;$HOST\a"
 PS1='%1~ >> '
 
 
+export ROOTSYS=/usr/local
+export PYTHONPATH=$ROOTSYS/lib/root:$PYTHONPATH
+# export LD_LIBRARY_PATH=$ROOTSYS/lib/root:$LD_LIBRARY_PATH
+
 export CUDASYS=/usr/local/cuda
 export PATH=$CUDASYS/bin:$PATH
-export PYTHONPATH=$CUDASYS/lib:$PYTHON_PATH
+export PYTHONPATH=$CUDASYS/lib:$PYTHONPATH
 export LD_LIBRARY_PATH=$CUDASYS/lib:$LD_LIBRARY_PATH
 export DYLD_LIBRARY_PATH=$CUDASYS/lib:$DYLD_LIBRARY_PATH
 
@@ -32,3 +37,13 @@ set combining_chars
 export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_CERT_PATH=/Users/ykita_work/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
+
+### ruby ###
+export RBENV_ROOT=$HOME/.rbenv
+export PATH=$RBENV_ROOT/bin:$PATH
+eval "$(rbenv init -)"
+
+# PYENV
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
+eval "$(pyenv init -)"
