@@ -3,6 +3,8 @@
 #
 #
 ############
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 ### alias ###
 alias v='vim'
 alias vi='vim'
@@ -24,11 +26,13 @@ export ROOTSYS=/usr/local
 export PYTHONPATH=$ROOTSYS/lib/root:$PYTHONPATH
 # export LD_LIBRARY_PATH=$ROOTSYS/lib/root:$LD_LIBRARY_PATH
 
-export CUDASYS=/usr/local/cuda
-export PATH=$CUDASYS/bin:$PATH
-export PYTHONPATH=$CUDASYS/lib:$PYTHONPATH
-export LD_LIBRARY_PATH=$CUDASYS/lib:$LD_LIBRARY_PATH
-export DYLD_LIBRARY_PATH=$CUDASYS/lib:$DYLD_LIBRARY_PATH
+export CUDA_PATH=/usr/local/cuda
+export PATH=$CUDA_PATH/bin:$PATH
+export LD_LIBRARY_PATH=$CUDA_PATH/lib:$LD_LIBRARY_PATH
+export DYLD_LIBRARY_PATH=$CUDA_PATH/lib:$DYLD_LIBRARY_PATH
+export PYTHONPATH=$CUDA_PATH/lib:$PYTHONPATH
+
+export CPATH=$CUDA_PATH/include:$CPATH
 
 setopt combining_chars
 set combining_chars

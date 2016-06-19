@@ -4,7 +4,6 @@ set nobackup
 set showmatch
 set ruler
 set encoding=utf-8
-set nu
 "set expandtab tabstop=4 expandtab shiftwidth=4 softtabstop=4
 set paste
 set incsearch
@@ -14,6 +13,9 @@ set foldmethod=indent
 
 set whichwrap=b,s,h,l,<,>,[,]
 set backspace=indent,eol,start
+
+set clipboard=unnamed
+let g:indentLine_enabled = 0
 
 
 " apparence

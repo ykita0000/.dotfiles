@@ -1,4 +1,3 @@
-set number
 filetype plugin on
 filetype indent on
 if filereadable(expand('$HOME/.vim/vimrc.neobundle'))
