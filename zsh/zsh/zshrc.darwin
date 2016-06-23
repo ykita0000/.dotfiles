@@ -1,28 +1,6 @@
-
-# ### python ###
-# export PYTHONPATH=$ROOTSYS/lib/root:$PYTHONPATH
-# ### pyqt ###
-# export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
-# export PYTHONPATH=/Library/Python/2.7/site-packages:$PYTHONPATH
-
-
 #######################################################################
 ### zsh                                                             ###
 #######################################################################
-# compinitの初期化
-autoload -U compinit
-compinit
-# 色つきの補完
-#zstyle ':completion:*' list-colors di=34 fi=0
-# 補完候補をカーソルで選択できる 
-zstyle ':completion:*:default' menu select=1
+export LSCOLORS=GxhxxxdxBxegedabagacad
 #補完リストに8ビットコードを使う
 setopt PRINT_EIGHT_BIT
-## svn editor
-export SVN_EDITOR="vim"
-### colors under setting
-export LSCOLORS=GxhxxxdxBxegedabagacad
-#export LSCOLORS=exfxcxdxbxegedabagacad
-export LS_COLORS='di=01;36:ln=37:so=32:pi=33:ex=01:31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-

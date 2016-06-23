@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/ykita/works/sf/jslp'
 let g:netrw_dirhist_2='/Users/ykita/.ssh'
 let g:netrw_dirhist_3='/Users/ykita/works/akiroom/cacho'
@@ -8,3 +8,4 @@ let g:netrw_dirhist_5='/Users/ykita/works/study/20160204_chisq_beyes_compare/py'
 let g:netrw_dirhist_6='/Users/ykita/.ssh'
 let g:netrw_dirhist_7='/Users/ykita/.dotfiles/vim/vim/indent'
 let g:netrw_dirhist_8='/Users/ykita/.matplotlib'
+let g:netrw_dirhist_9='/Users/ykita'

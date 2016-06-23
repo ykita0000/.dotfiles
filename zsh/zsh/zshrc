@@ -42,9 +42,6 @@ kterm*|xterm)
 	;;
 esac 
 
-## 補完
-autoload -U compinit
-compinit
 # ディレクトリ名を入力するだけで移動
 setopt auto_cd 
 # 自動でpushd
@@ -91,3 +88,12 @@ setopt complete_aliases
 
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
+# compinitの初期化
+autoload -U compinit
+compinit
+export LS_COLORS='di=01;36:ln=37:so=32:pi=33:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+# zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+# 補完候補をカーソルで選択できる 
+zstyle ':completion:*:default' menu select=1
